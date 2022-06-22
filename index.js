@@ -42,3 +42,14 @@ for (i = 0; i < thumbnails.length; i++) {
     }
   }
 }
+
+// CLICKING A CERTAIN THE DIV IMAGE AND DISPLAYING THE OVERLAY
+
+dis_img.addEventListener("click", overlay);
+
+function overlay() {
+  const over = document.getElementById("Overlay");
+  const middle_cont = document.getElementById("containerOverlay");
+  over.classList.add("actives");
+  middle_cont.classList.add("actives");
+}
