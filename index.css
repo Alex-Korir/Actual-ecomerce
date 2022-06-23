@@ -224,8 +224,8 @@ li {
   width: 400px;
   height: 500px;
   /* border: 1px solid red; */
-  z-index: 10;
   position: fixed;
+  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -236,18 +236,42 @@ li {
 }
 .modal.actives {
   transform: translate(-50%, -50%) scale(1);
-  pointer-events: all;
 }
-.up-image {
+.modal-images {
+  display: none;
+}
+.modal .modal-images img {
   width: 100%;
-  height: 80%;
-  /* border: 1px solid green; */
-  background-image: url("/ecommerce-product-page-main/images/image-product-1.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
+  height: 90%;
+  border-radius: 13px;
 }
-.low-images {
+.modal .button-slider {
+  top: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+  position: absolute;
+}
+.modal .button-slider div {
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  margin: 0 -20px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .button-slider img {
+  color: var(--very-vark-blue);
+  width: 10px;
+  height: 13px;
+}
+.modal .low-images {
   margin: 0 auto;
   width: 80%;
   /* border: 1px solid blue; */
@@ -256,6 +280,22 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.low-images .modal-Thumb {
+  width: 66px;
+  height: 66px;
+  cursor: pointer;
+}
+.low-images .modal-Thumb:hover {
+  opacity: 0.5;
+  border: 2px solid var(--orange);
+  border-radius: 9px;
+}
+
+.low-images .modal-Thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
 }
 .overlay {
   position: fixed;
@@ -270,8 +310,4 @@ li {
 .overlay.actives {
   pointer-events: all;
   opacity: 1;
-}
-.low-images > .small-images {
-  width: 66px;
-  height: 66px;
 }

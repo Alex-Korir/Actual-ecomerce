@@ -53,3 +53,35 @@ function overlay() {
   over.classList.add("actives");
   middle_cont.classList.add("actives");
 }
+
+// THE MODAL SECTION
+const imageNo = 1;
+displaying(imageNo);
+
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+prev.addEventListener("click", nextImg(-1));
+next.addEventListener("click", nextImg(1));
+function nextImg(n) {
+  displaying((n = n + imageNo));
+}
+
+const displaying = (n) => {
+  let i;
+  const image = document.querySelectorAll(".modal-images");
+  const nailthumbs = document.querySelectorAll(".modal-Thumb");
+
+  if (n > imageNo.length) {
+    imageNo.length = 1;
+  }
+  if (n < 1) {
+    imageNo = image.length;
+  }
+  for (i = 0; i < image.length; i++) {
+    image[i].style.display = "none";
+  }
+  for (i = 0; i < image.length; i++) {
+    nailthumbs[i].className = nailthumbs[i].className.replace("active", " ");
+  }
+  image[(imageNo = 1)].style.display = "block";
+};
