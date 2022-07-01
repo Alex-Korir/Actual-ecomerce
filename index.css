@@ -8,7 +8,7 @@
 :root {
   font-family: "Kumbh Sans", sans-serif;
   --orange: hsl(26, 100%, 55%);
-  --pale-orange: hsl(25, 100%, 94%);
+  --pale-orange: rgb(255, 237, 224);
   --very-vark-blue: hsl(220, 13%, 13%);
   --dark-grayish-blue: hsl(219, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
@@ -224,7 +224,7 @@ li {
   width: 400px;
   height: 500px;
   /* border: 1px solid red; */
-  position: fixed;
+  position: absolute;
   z-index: 10;
   top: 50%;
   left: 50%;
@@ -233,26 +233,46 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.2s;
+}
+.modal .close-btn{
+  position: absolute;
+  right: 0;
+  top: -1.9em;
+  cursor: pointer;
+  background-color: var(--white);
+}
+.modal .close-btn:hover{
+  color: var(--orange);
+}
+.modal .slider{
+  width: 100%;
+  height: 80%;
+  /* border: 1px solid black; */
 }
 .modal.actives {
   transform: translate(-50%, -50%) scale(1);
 }
-.modal-images {
+.modal .modal-images img {
+  border-radius: 13px;
+  width: 100%;
+}
+.modal .modal-images,
+.modal .viscible{
   display: none;
 }
-.modal .modal-images img {
-  width: 100%;
-  height: 90%;
-  border-radius: 13px;
+.modal .viscible{
+  display: block;
 }
 .modal .button-slider {
-  top: 30%;
+  top: 40%;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   z-index: 5;
   position: absolute;
+  transform: translateY(-50%);
 }
 .modal .button-slider div {
   width: 40px;
@@ -276,7 +296,6 @@ li {
   width: 80%;
   /* border: 1px solid blue; */
   height: 15%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,7 +305,7 @@ li {
   height: 66px;
   cursor: pointer;
 }
-.low-images .modal-Thumb:hover {
+.low-images .modal-Thumb.actived {
   opacity: 0.5;
   border: 2px solid var(--orange);
   border-radius: 9px;
@@ -296,6 +315,13 @@ li {
   width: 100%;
   height: 100%;
   border-radius: 9px;
+}
+.low-images .activated{
+  border: 2px solid var(--orange);
+  background-color: rgba(255, 237, 224, 0.9);
+  border-radius: 10px;
+  opacity: 0.5;
+  background-blend-mode: lighten;
 }
 .overlay {
   position: fixed;
