@@ -1,7 +1,7 @@
 const btn_images = document.querySelectorAll(".small-images");
 const dis_img = document.querySelector("#display-image");
 const thumbnails = document.querySelectorAll("#thumbnails");
-
+const  cart_button = document.querySelector(".cart-button");
 /*MAKING ONE BUTTON BECOME ACTIVE AT A TIME*/
 
 const selection = document.querySelector("#select");
@@ -53,7 +53,6 @@ function overlay() {
   over.classList.add("actives");
   middle_cont.classList.add("actives");
 }
-
 // THE MODAL SECTION
 const modal = document.querySelector("#containerOverlay");
 const slider = document.querySelector(".slider");
@@ -128,6 +127,17 @@ close_button.addEventListener('click', () => {
   const middle_cont = document.getElementById("containerOverlay");
   over.classList.remove("actives");
   middle_cont.classList.remove("actives");
+});
+
+// The cart icon button
+const cart_container = document.getElementById("container");
+cart_button.addEventListener("click", () => {
+  if(cart_container.style.display === "none"){
+    cart_container.style.display = "block";
+  }
+  else{
+    cart_container.style.display = "none";
+  }
 });
 
 

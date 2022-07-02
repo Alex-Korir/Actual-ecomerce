@@ -9,7 +9,7 @@
   font-family: "Kumbh Sans", sans-serif;
   --orange: hsl(26, 100%, 55%);
   --pale-orange: rgb(255, 237, 224);
-  --very-vark-blue: hsl(220, 13%, 13%);
+  --very-vark-blue: #1d2025;
   --dark-grayish-blue: hsl(219, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
@@ -52,6 +52,11 @@ li {
 .avatar {
   width: 40px;
   margin-left: 30px;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+}
+.avatar:hover{
+  border: 2px solid var(--orange);
 }
 .cart {
   padding-bottom: 9px;
@@ -107,14 +112,17 @@ li {
   cursor: pointer;
 }
 .small-images > img {
-  width: 100%;
+  width: fit-content;
   height: 100%;
   border-radius: 10px;
-  outline: 0;
+  outline: none;
+}
+.small-images:hover{
+  opacity: 0.5;
 }
 .active {
   border: 2px solid var(--orange);
-  opacity: 0.5;
+  opacity: 0.4;
   border-radius: 10px;
 }
 /* right container content */
@@ -240,7 +248,7 @@ li {
   right: 0;
   top: -1.9em;
   cursor: pointer;
-  background-color: var(--white);
+  color: var(--white);
 }
 .modal .close-btn:hover{
   color: var(--orange);
@@ -336,4 +344,35 @@ li {
 .overlay.actives {
   pointer-events: all;
   opacity: 1;
+}
+.cart-container{
+  width: 19.625em;
+  height: 12.625em;
+  /* border: 1px solid red; */
+  top: 10%;
+  right: 5%;
+  position: absolute;
+  z-index: 10;
+  background-color: var(--white);
+  box-shadow: .1em .2em .3em .2em var(--grayish-blue);
+  display: none;
+}
+.cart-nav{
+  height: 3.5em;
+  border: 1px solid rgba(104, 112, 125, 0.2);
+  padding: 1em;
+  font-size: 0.9em;
+}
+.cart-container .cart-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: .9em;
+}
+.cart-container .cart-box h4{
+  font-size: 1em;
+  text-align: center;
+  color: var(--dark-grayish-blue);
 }
